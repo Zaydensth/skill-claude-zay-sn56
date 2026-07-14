@@ -8,6 +8,16 @@ we use — WITHOUT any of our research/experiments/identity. Their agent builds 
   multi-agent workflows, memory protocol, tournament mechanics, public skills, guardrails).
 - `MEMORY.md` — the second-brain **index skeleton** (category boxes, empty — fill by data).
 - `_AGENT_ONBOARDING.md` — first-session checklist for a fresh agent.
+- `AUTOMATION.md` — **the operational layer**: the self-driving loop + a job→tool map (which tool/skill for
+  each recurring job). Read this to make the agent *work and prompt itself*.
+- `playbooks/` — concrete how-to for the jobs you run often:
+  - `vps-operations.md` — connect · install/match validator container · stage model · **CPU smoke** · **real
+    train** · **real eval** · monitor · teardown, plus the gotchas that actually bite.
+  - `research-and-review.md` — multi-agent Workflow patterns (fan-out → adversarial verify → synthesize;
+    diagnose→design; code-review).
+  - `self-driving-loop.md` — pacing, `/loop` + Monitor + ScheduleWakeup, when to self-drive vs check in.
+  - `checks-and-audits.md` — pull the real state (task-audit, grafana logs, upstream tracker, forensics).
+  - `reporting-and-memory.md` — milestone summaries, memory updates, alerts, dashboard.
 
 ## Install (their machine)
 1. **CLAUDE.md** → the project root of their miner repo (or `~/.claude/CLAUDE.md` for global). Claude Code
