@@ -40,7 +40,10 @@ we use — WITHOUT any of our research/experiments/identity. Their agent builds 
    ```
    Then, in the first session: *"read the sn56-text-mining skill, then references/text-track-brain.md."*
    The agent should do this **before** it writes or changes any training code.
-5. (Optional) copy the other **public** skills they want (`tournament-task-audit`, `gradients-grafana-logs`,
+5. Paste the bootstrap prompt from **`PROMPTS.md`** into Claude Code — it installs the skill, loads the
+   method, makes the agent verify everything against the current validator source, and asks for their
+   profile. `PROMPTS.md` also has a per-session loop prompt and a post-tournament post-mortem prompt.
+6. (Optional) copy the other **public** skills they want (`tournament-task-audit`, `gradients-grafana-logs`,
    `god-upstream-tracker`, `tournament-miner-research`) into `~/.claude/skills/`.
 
 ## NOT included (on purpose)
