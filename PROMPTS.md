@@ -82,9 +82,14 @@ Do a full post-mortem of the tournament that just finished.
 
 1. Pull every task my hotkey participated in from the public task API: task type, base model,
    hours_to_complete, final ranking and scores.
-2. For each of my runs, pull the container logs and the run config (the process-spawn line usually
-   carries the whole command line; the public run tracker has the rest).
-3. For each task, also resolve the config of the run that scored best, and diff it against mine.
+2. For each of my runs, pull the config from all three sources and cross-check them: the container logs
+   (the process-spawn line carries the launch command line), the public run tracker, and the uploaded
+   model repo itself — `training_args.bin` for the exact final hyper-parameters and
+   `trainer_state.json` for the evaluation trajectory. Load any pickle with weights_only=True.
+   Where the three disagree, that disagreement is a finding: it means a runtime fallback fired.
+3. For each task, also resolve the config of the run that scored best, and diff it against mine. From its
+   `trainer_state.json` check FIRST whether it finished its schedule and whether its learning rate
+   annealed — that often explains the result better than its hyper-parameters do.
 4. For every difference, state the MECHANISM it implies — not just which number was bigger — and mark it
    PROVEN or HYPOTHESIS. Verify each mechanism against the validator code before you believe it.
 5. Triage my losses using skills/sn56-text-mining/references/failure-modes.md, in its triage order.

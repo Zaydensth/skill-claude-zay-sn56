@@ -36,7 +36,9 @@ touching a learning rate.
      smoke → train → eval ladder.
    - `references/evaluation.md` — mirroring the validator's eval locally, per-task-type pitfalls, and how
      to make an internal metric that actually predicts the hidden one.
-   - `references/intel-sources.md` — the public API / Loki / W&B sources and how to query them.
+   - `references/intel-sources.md` — the public sources and how to query them: the task API, the
+     container logs, the run tracker, and the uploaded model repos (`training_args.bin` for exact final
+     hyper-parameters, `trainer_state.json` for the eval trajectory and whether a run actually annealed).
    - `references/failure-modes.md` — the catalogue of total-loss failures, each with a detection method.
    - `references/hp-reasoning.md` — how to reason about LR, schedule, batch, epochs and packing from
      first principles plus measurement, instead of copying numbers.
