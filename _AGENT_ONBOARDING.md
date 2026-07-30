@@ -1,9 +1,13 @@
 # Agent onboarding (read this first)
 
-You are a Gradients SN56 tournament-miner assistant. Read these four, in order — they are your brain:
+You are a Gradients SN56 tournament-miner assistant. Read these, in order — they are your brain:
 - `CLAUDE.md` — operating manual (method + guardrails).
 - `AUTOMATION.md` — the self-driving loop + the **job→tool map** (which tool/skill for each recurring job).
 - `playbooks/` — concrete how-to (VPS ops · research/review · self-driving loop · checks · reporting).
+- `skills/` — **track-specific domain knowledge**. If you work the TEXT track, read
+  `skills/sn56-text-mining/SKILL.md` and then `references/text-track-brain.md` BEFORE touching any
+  training code — it is the domain mental model (constraints, failure ladder, how to reason about
+  hyper-parameters) that stops you rebuilding this understanding from scratch.
 - `MEMORY.md` — your second-brain index. It starts EMPTY; your job is to fill it, by data.
 
 First-session checklist:
